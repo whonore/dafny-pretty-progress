@@ -1,0 +1,11 @@
+name:                dafny-pretty-progress
+version:             1.0.0.0
+author:              Wolf Honoré
+maintainer:          wolfhonore@gmail.com
+copyright:           "MIT"
+
+dependencies:
+  - base
+
+library:
+  source-dirs: src
