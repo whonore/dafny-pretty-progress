@@ -6,3 +6,8 @@ Prettify `dafny verify --progress`.
 $ nix-shell
 [nix-shell]$ stack build
 ```
+
+## Usage
+```shell
+dafny verify {file.dfy} --progress | dafny-pretty-progress
+```

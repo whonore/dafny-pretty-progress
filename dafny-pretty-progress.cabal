@@ -15,11 +15,34 @@ build-type:     Simple
 
 library
   exposed-modules:
-      Main
+      Prettify
   other-modules:
       Paths_dafny_pretty_progress
   hs-source-dirs:
-      src
+      lib
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base
+      ansi-terminal >=1.0.0 && <1.1
+    , base >=4.18.0 && <4.19
+    , containers >=0.6.0 && <0.7
+    , mtl >=2.3.0 && <2.4
+    , regex-tdfa >=1.3.2 && <1.4
+    , text >=2.0.0 && <2.1
+  default-language: Haskell2010
+
+executable dafny-pretty-progress-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_dafny_pretty_progress
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ansi-terminal >=1.0.0 && <1.1
+    , base >=4.18.0 && <4.19
+    , containers >=0.6.0 && <0.7
+    , dafny-pretty-progress
+    , mtl >=2.3.0 && <2.4
+    , regex-tdfa >=1.3.2 && <1.4
+    , text >=2.0.0 && <2.1
   default-language: Haskell2010
